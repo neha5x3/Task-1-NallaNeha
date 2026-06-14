@@ -1,0 +1,268 @@
+:root {
+  --mocha:#A5866F;
+  --blue:#A0D4E0;
+  --grey:#F2F0EA;
+  --dark:#3E3028;
+  --white:#FFFFFF;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  font-family:'Open Sans',sans-serif;
+  background:var(--grey);
+  color:var(--dark);
+  line-height:1.6;
+}
+
+/* Typography */
+h1,h2,h3 {
+  font-family:'Inter',sans-serif;
+}
+
+h1 {
+  font-size: clamp(2rem, 2.5vw + 1rem, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem);
+}
+
+p {
+  font-size: clamp(1rem, 1.2vw, 1.25rem);
+}
+
+/* Header */
+.header {
+  background:var(--grey);
+  position:sticky;
+  top:0;
+  z-index:100;
+  border-bottom:1px solid #ddd;
+}
+
+.navbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 5%;
+}
+
+.logo {
+  font-size:1.5rem;
+  font-weight:700;
+}
+
+.nav-links {
+  display:none;
+  list-style:none;
+  gap:1rem;
+}
+
+.nav-links a {
+  text-decoration:none;
+  color:var(--dark);
+  font-weight:600;
+}
+
+.nav-links a:focus-visible {
+  outline:2px solid var(--blue);
+  border-radius:4px;
+}
+
+.menu-btn {
+  background:none;
+  border:none;
+  font-size:1.5rem;
+  cursor:pointer;
+}
+
+/* Mobile nav animation */
+.nav-links.open {
+  display:flex;
+  flex-direction:column;
+  position:absolute;
+  top:100%;
+  right:5%;
+  background:var(--white);
+  padding:1rem;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  opacity:1;
+  transform:translateY(0);
+  transition:all 0.3s ease;
+}
+
+/* Hero */
+.hero {
+  width: 100%;
+  min-height:90vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background-image: url('background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-content {
+  max-width:700px;
+}
+
+.hero p {
+  margin-bottom:2rem;
+}
+
+.btn {
+  display:inline-block;
+  background:var(--mocha);
+  color:white;
+  padding:0.9rem 1.8rem;
+  text-decoration:none;
+  border-radius:8px;
+}
+
+.btn:hover,
+button:hover {
+  background:var(--dark);
+  transition:background 0.3s ease;
+}
+
+/* Services */
+.services {
+  padding:4rem 5%;
+}
+
+.services h2 {
+  text-align:center;
+  margin-bottom:2rem;
+}
+
+.service-grid {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.5rem;
+}
+
+.card {
+  background:white;
+  padding:2rem;
+  border-radius:12px;
+  border-top:5px solid var(--blue);
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* About */
+.about {
+  padding:4rem 5%;
+}
+
+.about-grid {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+}
+
+.about-box {
+  background:var(--blue);
+  padding:2rem;
+  border-radius:12px;
+  text-align:center;
+  font-weight:700;
+}
+
+/* Why Us */
+.why-us {
+  padding:4rem 5%;
+}
+
+.why-us h2 {
+  text-align:center;
+  margin-bottom:2rem;
+}
+
+.why-grid {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1rem;
+}
+
+.why-card {
+  background:var(--mocha);
+  color:white;
+  padding:1.5rem;
+  text-align:center;
+  border-radius:10px;
+}
+
+/* Contact */
+.contact {
+  padding:4rem 5%;
+}
+
+.contact h2 {
+  text-align:center;
+  margin-bottom:2rem;
+}
+
+form {
+  max-width:600px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+input,
+textarea {
+  padding:1rem;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-family:inherit;
+}
+
+textarea {
+  height:150px;
+}
+
+button {
+  background:var(--mocha);
+  color:white;
+  border:none;
+  padding:1rem;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* Footer */
+footer {
+  background:var(--dark);
+  color:white;
+  text-align:center;
+  padding:1.5rem;
+}
+
+/* Tablet */
+@media(min-width:768px) {
+  .menu-btn { display:none; }
+  .nav-links { display:flex; }
+  .service-grid { grid-template-columns:repeat(3,1fr); }
+  .about-grid { grid-template-columns:1fr 1fr; }
+  .why-grid { grid-template-columns:repeat(2,1fr); }
+}
+
+/* Desktop */
+@media(min-width:1024px) {
+  .hero { padding:4rem; }
+  main { max-width:none; margin:auto; }
+}
